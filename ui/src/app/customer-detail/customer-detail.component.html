@@ -1,0 +1,8 @@
+<div *ngIf="customer!=null && customer!=undefined">
+    <p>CustomerId: {{customer.customerId}}</p>
+    <p>Name: {{customer.name}}</p>
+    <p>Type: {{customer.type}}</p>
+</div>
+
+
+<a [routerLink]="['/customers']">Back</a>

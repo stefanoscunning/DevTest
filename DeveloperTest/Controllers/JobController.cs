@@ -42,7 +42,12 @@ namespace DeveloperTest.Controllers
                 return BadRequest("Date cannot be in the past");
             }
 
-            var job = jobService.CreateJob(model);
+            if (model.Customer==null)
+            {
+              return BadRequest("Customer must be selected");
+            }
+
+           var job = jobService.CreateJob(model);
 
             return Created($"job/{job.JobId}", job);
         }
